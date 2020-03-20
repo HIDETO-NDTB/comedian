@@ -13,12 +13,15 @@
 
 		<!-- Bootstrap -->
 		<link type="text/css" rel="stylesheet" href="{{asset('app/css/bootstrap.min.css')}}"/>
+		{{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> --}}
 
 		<!-- Font Awesome Icon -->
 		<link rel="stylesheet" href="{{asset('app/css/font-awesome.min.css')}}">
 
+		
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="{{asset('app/css/style.css')}}"/>
+		<link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,23 +42,28 @@
 					<div class="container">
 						<!-- logo -->
 						<div class="nav-logo">
-              <a class="logo" href="/">Digging Comedian</a>
+              <a class="logo" href="/">Comedian</a>
 							{{-- <a href="index.html" class="logo"><img src="./img/logo.png" alt=""></a> --}}
 						</div>
 						<!-- /logo -->
 
 						<!-- nav -->
 						<ul class="nav-menu nav navbar-nav">
-							<li><a href="{{route('home')}}">ホーム</a></li>
-							<li><a href="{{route('category')}}">ランキング</a></li>					
-							<li class="cat-"><a href="{{route('category')}}">新規投稿</a></li>
-							<li class="cat-"><a href="{{route('category')}}">このサイトについて</a></li>
+							<li><a href="/">Home</a></li>
+							<li><a href="/categoryranking">Ranking</a></li>					
+							<li class=""><a href="/categorynewpost">New post</a></li>
+							<li class=""><a href="/categoryaboutsite">About this site</a></li>
+							<li class=""><a href="{{route('login')}}">Login</a></li>
+							<li class=""><a href="{{route('register')}}">Register</a></li>
 						</ul>
 						<!-- /nav -->
 
 						<!-- search & aside toggle -->
 						<div class="nav-btns">
-							<button class="aside-btn"><i class="fa fa-bars" ></i></button>
+							<button class="aside-btn">
+								<a>
+										<i class="fa fa-bars" ></i></a>
+								</button>
 							<button class="search-btn"><i class="fa fa-search"></i></button>
 							<div class="search-form">
 								<input class="search-input" type="text" name="search" placeholder="Enter Your Search ...">
@@ -68,7 +76,7 @@
 				<!-- /Main Nav -->
 
         <!-- Aside Nav -->  
-				<div id="nav-aside">
+				<div id="nav-aside" class="">
 					<!-- nav -->
 					<div class="section-row">
 						<ul class="nav-aside-menu">
@@ -158,21 +166,21 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="footer-widget">
-									<h3 class="footer-title">作成者について</h3>
+									<h3 class="footer-title">About editer</h3>
 									<ul class="footer-links">
-										<li><a href="about.html">作成者について</a></li>									
-										<li><a href="contact.html">お問い合わせ</a></li>
+										<li><a href="about.html">About editer</a></li>									
+										<li><a href="contact.html">Contact</a></li>
 									</ul>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="footer-widget">
-									<h3 class="footer-title">カテゴリー</h3>
+									<h3 class="footer-title">Categories</h3>
 									<ul class="footer-links">
-										<li><a href="category.html">ホーム</a></li>
-										<li><a href="category.html">ランキング</a></li>
-										<li><a href="category.html">新規投稿</a></li>
-										<li><a href="category.html">このサイトについて</a></li>
+										<li><a href="/">Home</a></li>
+										<li><a href="categoryranking">Ranking</a></li>
+										<li><a href="categorynewpost">New post</a></li>
+										<li><a href="categoryaboutsite">About this site</a></li>
 									</ul>
 								</div>
 							</div>
@@ -184,10 +192,10 @@
 							<h3 class="footer-title">Social Media</h3>
 							
 							<ul class="footer-social">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+								<li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="https://twitter.com/?lang=ja"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="https://www.instagram.com/?hl=ja"><i class="fa fa-instagram"></i></a></li>
+								<li><a href="https://www.youtube.com/?hl=ja"><i class="fa fa-youtube"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -200,9 +208,15 @@
 		<!-- /Footer -->
 
 		<!-- jQuery Plugins -->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/main.js"></script>
-
+		<script src="{{ asset('js/app.js') }}"></script>
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="js/main.js" type="text/javascript"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="text/javascript"></script>
+    
 	</body>
 </html>
+

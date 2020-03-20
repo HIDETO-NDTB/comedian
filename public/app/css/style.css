@@ -853,7 +853,7 @@ RESPONSIVE
  .archive-widget ul li {
      display:block;
      padding-bottom: 10px;
-     border-bottom: 1px solid #eceef2;
+   
 }
  .archive-widget ul li + li {
      margin-top:10px;
