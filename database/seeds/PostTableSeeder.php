@@ -18,7 +18,7 @@ class PostTableSeeder extends Seeder
             'slug' => 'comedian-1',
             'image' => '1584513114download-1.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto excepturi in temporibus natus laboriosam mollitia architecto ullam assumenda cumque incidunt omnis',
-            'comment' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto excepturi in temporibus natus laboriosam mollitia architecto ullam assumenda cumque incidunt omnis, dolorum aliquid aliquam obcaecati saepe repellat iste illum modi.',
+            'comment' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ',
         ]);
 
         \App\Post::create([
@@ -27,7 +27,7 @@ class PostTableSeeder extends Seeder
             'slug' => 'comedian-2',
             'image' => '1584513114download-1.jpg',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto excepturi in temporibus natus laboriosam mollitia architecto ullam assumenda cumque incidunt omnis',
-            'comment' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto excepturi in temporibus natus laboriosam mollitia architecto ullam assumenda cumque incidunt omnis, dolorum aliquid aliquam obcaecati saepe repellat iste illum modi.',
+            'comment' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. .',
         ]);
     
     }
