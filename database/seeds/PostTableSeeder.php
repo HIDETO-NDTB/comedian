@@ -12,7 +12,7 @@ class PostTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Post::create([
+        \App\post::create([
             'id' => '1',
             'name' => 'comedian-1',
             'slug' => 'comedian-1',
