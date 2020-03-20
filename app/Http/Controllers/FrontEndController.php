@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
-use App\Post;
+use App\category;
+use App\post;
 
 class FrontEndController extends Controller
 {
