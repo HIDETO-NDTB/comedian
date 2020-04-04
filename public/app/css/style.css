@@ -980,7 +980,7 @@ RESPONSIVE
 
 /* ヒデト追加 */
 button.good {
-    margin-top: 15px;
+    margin-top: 10px;
     border: none;
     color: red;
 }
@@ -999,4 +999,32 @@ h5.favorites {
     float: right;
     font-size: 18px;
     color: red;
+    margin-top: 10px;
+}
+
+h3.post-description {
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h3.post-comment {
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+div.commentBox {
+    border: 1px solid gray;
+}
+
+h3.commentTitle {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 10px 5px;
+}
+
+div.post {
+    height: 550px;
 }

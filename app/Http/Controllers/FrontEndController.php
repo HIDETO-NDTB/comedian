@@ -10,12 +10,17 @@ use App\User;
 class FrontEndController extends Controller
 {
     public function index(){
-        return view('index')->with('posts',Post::paginate(9));
+        $posts = post::orderBy('created_at','desc')->get();
+
+        return view('index')->with('posts',$posts);
     }
 
     public function categoryranking(){
-        return view('category.categoryranking')->with('posts',Post::all());
+        $rankings = post::withCount('favorite_users')->orderBy('favorite_users_count','desc')->get();
+
+        return view('category.categoryranking')->with('rankings',$rankings);
     }
+
     public function categorynewpost(){
         return view('category.categorynewpost')->with('users',User::all());
     }

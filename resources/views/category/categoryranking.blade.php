@@ -21,7 +21,7 @@
                 </div>
               </div>
               <!-- post -->
-             @foreach($posts as $post)
+             @foreach($rankings as $ranking)
              @for($rank=1;$rank<6;$rank++)
                 {{$rank}}
 
@@ -29,20 +29,21 @@
               <div class="col-md-12">
                   <div class="post-body">
                       <div class="post-meta">
-                        <a class="" href="">{{$post->name}}</a>
+                        <a class="" href="">{{$ranking->name}}</a>
                       </div>
-                      <h3 class="post-title">{{$post->coment}}</h3>
-                      <h3 class="post-title">{{$post->description}}</h3>
+                      <h3 class="post-title">{{$ranking->coment}}</h3>
+                      <h3 class="post-title">{{$ranking->description}}</h3>
                     </div>
                 <div class="post post-row">
-                  <a class="post-img" href=""><img src="{{asset('storage/'.$post->image)}}" alt="{{$post->name}}" style="width: 150%"></a>
+                  <a class="post-img" href=""><img src="{{asset('storage/'.$ranking->image)}}" alt="{{$ranking->name}}" style="width: 150%"></a>
                 </div>
+                <h5 class="favorites">いいね！ {{ $ranking->favorite_users->count() }}</h5>
               </div>
               @endforeach
               <!-- /post -->
-  
-           
-              
+
+
+
               <div class="col-md-12">
                 <div class="section-row">
                   <button class="primary-button center-block">Load More</button>
@@ -50,8 +51,8 @@
               </div>
             </div>
           </div>
-  
-        
+
+
              <!-- archive -->
           <div class="aside-widget">
               <div class="section-title">
@@ -62,11 +63,11 @@
                   <li><a href="#">・March 2020</a></li>
                   <li><a href="#">・February 2020</a></li>
                   <li><a href="#">・January 2020</a></li>
-                  <li><a href="#">・December 2019</a></li>             
+                  <li><a href="#">・December 2019</a></li>
                 </ul>
               </div>
             </div>
-            <!-- /archive -->  
+            <!-- /archive -->
           </div>
         </div>
         <!-- /row -->
@@ -78,4 +79,3 @@
   <!-- /section -->
 
   @endsection
-  

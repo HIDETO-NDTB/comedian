@@ -16,16 +16,19 @@
 
         <!-- post -->
         @foreach($posts as $post)
-        <div class="col-md-4">
+        <div class="col-md-4 post">
           <div class="post">
             <a class="post-img" href=""> <img src="{{asset('storage/'.$post->image)}}" alt="{{$post->name}}" style="width:100%; height:250px"></a>
             <div class="post-body">
               <div class="post-meta">
-                <a href="">{{$post->name}}</a>
-                <span class="post-date">March 27, 2018</span>
+                <h3 class="name">{{$post->name}}
+                    <span class="post-date">March 27, 2018</span></h3>
+                <h3 class="post-description">{{$post->description}}</h3>
               </div>
-              <h3 class="post-title"><a href=””>{{$post->description}}</a></h3>
-              <h3 class="post-title"><a href="">{{$post->comment}}</a></h3>
+              <div class=commentBox>
+                <h3 class="commentTitle">コメント一覧</h3>
+                <h3 class="post-comment">{{$post->comment}}</h3>
+              </div>
               <!-- ヒデト追加　-->
               @if((Auth::check())&&($post->user_id!=Auth::user()->id))
               @if (Auth::user()->is_favorite($post->id))
@@ -49,10 +52,7 @@
         @endforeach
         <!-- /post -->
     </div>  <!-- /container -->
-    <div class="paginate">
-        {{$posts->links()}}
-      </div>
-  </div>  <!-- /section -->
+
 
   <!-- section -->
   <div class="section">
