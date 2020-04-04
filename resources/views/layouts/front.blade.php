@@ -9,7 +9,7 @@
 		<title>WebMag HTML Template</title>
 
 		<!-- Google font -->
-		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet">
 
 		<!-- Bootstrap -->
 		<link type="text/css" rel="stylesheet" href="{{asset('app/css/bootstrap.min.css')}}"/>
@@ -18,7 +18,7 @@
 		<!-- Font Awesome Icon -->
 		<link rel="stylesheet" href="{{asset('app/css/font-awesome.min.css')}}">
 
-		
+
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="{{asset('app/css/style.css')}}"/>
 		<link rel="stylesheet" href="{{ asset('css/custom.css') }}">
@@ -29,7 +29,7 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-     
+
     </head>
 	<body>
 
@@ -50,11 +50,23 @@
 						<!-- nav -->
 						<ul class="nav-menu nav navbar-nav">
 							<li><a href="/">Home</a></li>
-							<li><a href="/categoryranking">Ranking</a></li>					
+							<li><a href="/categoryranking">Ranking</a></li>
 							<li class=""><a href="/categorynewpost">New post</a></li>
-							<li class=""><a href="/categoryaboutsite">About this site</a></li>
+                            <li class=""><a href="/categoryaboutsite">About this site</a></li>
+                            <!-- ヒデト追加　-->
+                            @if(!Auth::check())
 							<li class=""><a href="{{route('login')}}">Login</a></li>
-							<li class=""><a href="{{route('register')}}">Register</a></li>
+                            <li class=""><a href="{{route('register')}}">Register</a></li>
+                            @else
+                            <li class=""><a href="{{route('logout')}}"
+                                onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">{{ __('Logout') }}
+                    　　　　　</a></li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                            </form>
+                            @endif
+                            <!-- ここまで　-->
 						</ul>
 						<!-- /nav -->
 
@@ -75,7 +87,7 @@
 				</div>
 				<!-- /Main Nav -->
 
-        <!-- Aside Nav -->  
+        <!-- Aside Nav -->
 				<div id="nav-aside" class="">
 					<!-- nav -->
 					<div class="section-row">
@@ -168,7 +180,7 @@
 								<div class="footer-widget">
 									<h3 class="footer-title">About editer</h3>
 									<ul class="footer-links">
-										<li><a href="about.html">About editer</a></li>									
+										<li><a href="about.html">About editer</a></li>
 										<li><a href="contact.html">Contact</a></li>
 									</ul>
 								</div>
@@ -190,7 +202,7 @@
 					<div class="col-md-3">
 						<div class="footer-widget">
 							<h3 class="footer-title">Social Media</h3>
-							
+
 							<ul class="footer-social">
 								<li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
 								<li><a href="https://twitter.com/?lang=ja"><i class="fa fa-twitter"></i></a></li>
@@ -216,7 +228,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 		<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="text/javascript"></script>
-    
+
 	</body>
 </html>
 

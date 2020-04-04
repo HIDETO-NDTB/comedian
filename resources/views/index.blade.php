@@ -4,7 +4,7 @@
   <div class="section">
     <!-- container -->
     <div class="container">
-      
+
 
       <!-- row -->
       <div class="row">
@@ -12,8 +12,8 @@
           <div class="section-title">
             <h2>New post</h2>
           </div>
-        </div>  
-  
+        </div>
+
         <!-- post -->
         @foreach($posts as $post)
         <div class="col-md-4">
@@ -26,8 +26,13 @@
               </div>
               <h3 class="post-title"><a href=””>{{$post->description}}</a></h3>
               <h3 class="post-title"><a href="">{{$post->comment}}</a></h3>
+              <!-- ヒデト追加　-->
+              <form action="" method="POST">
+              @csrf
+                <button class="good" type="submit"><img class="good" src="{{ asset('app/img/good.png') }}">いいね！</button>
+              </form>
+              <!-- ここまで　-->
             </div>
-            
           </div>
         </div>
         @endforeach
@@ -37,13 +42,13 @@
         {{$posts->links()}}
       </div>
   </div>  <!-- /section -->
-       
+
   <!-- section -->
   <div class="section">
     <!-- container -->
     <div class="container">
       <!-- row -->
-      <div class="row">          
+      <div class="row">
           <!-- tags -->
           <div class="aside-widget">
             <div class="tags-widget">
@@ -66,4 +71,3 @@
 
   @endsection
 
- 
