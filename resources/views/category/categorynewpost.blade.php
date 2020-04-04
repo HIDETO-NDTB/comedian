@@ -17,7 +17,6 @@
                 <input name="image" value="" type="file">
             </div>
 
-         
             <fieldset class="mb-4">
                <div class="form-group">
                    <label for="name">name</label>
@@ -33,9 +32,17 @@
                 <textarea id="body" name="comment" class="form-control " rows="15"></textarea>
               </div>
 
+            <!-- ヒデト追加 -->
+            @foreach ($users as $user)
+              <div class="form-group">
+                <input type="hidden" name="user_id"  value="{{ $user->id }}">
+              </div>
+            </div>
+            @endforeach
+            <!-- ここまで -->
 
                       <div class="mt-5">
-                          <a class="btn btn-secondary" href="https://laravel-bbs.hiroyuki90.com">
+                          <a class="btn btn-secondary" href="">
                               cancel
                           </a>
 

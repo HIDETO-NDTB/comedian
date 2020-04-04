@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\category;
 use App\post;
+use App\User;
 
 class FrontEndController extends Controller
 {
@@ -16,7 +17,7 @@ class FrontEndController extends Controller
         return view('category.categoryranking')->with('posts',Post::all());
     }
     public function categorynewpost(){
-        return view('category.categorynewpost');
+        return view('category.categorynewpost')->with('users',User::all());
     }
 
     public function categorystorepost(Request $request){

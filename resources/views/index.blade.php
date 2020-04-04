@@ -27,10 +27,21 @@
               <h3 class="post-title"><a href=””>{{$post->description}}</a></h3>
               <h3 class="post-title"><a href="">{{$post->comment}}</a></h3>
               <!-- ヒデト追加　-->
-              <form action="" method="POST">
+              @if((Auth::check())&&($post->user_id!=Auth::user()->id))
+              @if (Auth::user()->is_favorite($post->id))
+              <form action="{{ route('favorites.unfavorite',['id'=>$post->id]) }}" method="POST">
+              @csrf
+              @method('DELETE')
+                   <button class="good" type="submit"><img class="good" src="{{ asset('app/img/good.png') }}">取消し</button>
+              </form>
+              @else
+              <form action="{{ route('favorites.favorite',['id'=>$post->id]) }}" method="POST">
               @csrf
                 <button class="good" type="submit"><img class="good" src="{{ asset('app/img/good.png') }}">いいね！</button>
               </form>
+              @endif
+              @endif
+              <h5 class="favorites">いいね！ {{ $post->favorite_users->count() }}</h5>
               <!-- ここまで　-->
             </div>
           </div>

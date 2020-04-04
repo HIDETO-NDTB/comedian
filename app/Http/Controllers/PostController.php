@@ -42,7 +42,7 @@ class PostController extends Controller
             'description'=>'required',      //もしここで足りていなければどうなるのか？
             'comment'=>'required',
             'image'=>'required|image'   //なぜこんな書き方？
-            
+
         ]);
 
         //store into db
@@ -55,13 +55,14 @@ class PostController extends Controller
        Storage::disk('public')->put($featured_new_name,file_get_contents($featured));
 
 
-       //Mass Assignment 
+       //Mass Assignment
        $post=Post::create([
         'name'=>$request->name,
         'slug'=>str_slug($request->name),
         'description'=>$request->description,
         'image'=>$featured_new_name, //?
-        'comment'=>$request->comment
+        'comment'=>$request->comment,
+        'user_id'=>$request->user_id,
     ]);
 
 

@@ -1,4 +1,4 @@
-/* 
+/*
 Template Name: WebMag Html Template
 
 Author: yaminncco
@@ -72,7 +72,7 @@ RESPONSIVE
  ul,ol{
      margin: 0;
      padding: 0;
-     list-style: none 
+     list-style: none
 }
  ul.list-style, ol.list-style {
      padding-left: 15px;
@@ -853,7 +853,7 @@ RESPONSIVE
  .archive-widget ul li {
      display:block;
      padding-bottom: 10px;
-   
+
 }
  .archive-widget ul li + li {
      margin-top:10px;
@@ -976,4 +976,27 @@ RESPONSIVE
      .post.post-row .post-body p {
          display:none;
     }
+}
+
+/* ヒデト追加 */
+button.good {
+    margin-top: 15px;
+    border: none;
+    color: red;
+}
+
+img.good {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+div.mt-5 {
+    text-align: center;
+}
+
+h5.favorites {
+    float: right;
+    font-size: 18px;
+    color: red;
 }
