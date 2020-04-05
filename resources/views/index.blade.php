@@ -17,7 +17,7 @@
         <!-- post -->
         @foreach($posts as $post)
         <div class="col-md-4 post">
-          <div class="post">
+          <div class="postIndex">
             <a class="post-img" href=""> <img src="{{asset('storage/'.$post->image)}}" alt="{{$post->name}}" style="width:100%; height:250px"></a>
             <div class="post-body">
               <div class="post-meta">
